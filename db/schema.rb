@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181028172953) do
+ActiveRecord::Schema.define(version: 20181028173349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,20 @@ ActiveRecord::Schema.define(version: 20181028172953) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "reimbursements", force: :cascade do |t|
+    t.float    "amount",     default: 0.0
+    t.boolean  "claimed",    default: false
+    t.integer  "event_id"
+    t.integer  "member_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "reimbursements", ["event_id"], name: "index_reimbursements_on_event_id", using: :btree
+  add_index "reimbursements", ["member_id"], name: "index_reimbursements_on_member_id", using: :btree
+
   add_foreign_key "attended_events", "events"
   add_foreign_key "attended_events", "members"
+  add_foreign_key "reimbursements", "events"
+  add_foreign_key "reimbursements", "members"
 end
