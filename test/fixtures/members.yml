@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nickname: MyString
+  volunteer_hours: 1.5
+  year: MyString
+  major: MyString
+  email: MyString
+
+two:
+  name: MyString
+  nickname: MyString
+  volunteer_hours: 1.5
+  year: MyString
+  major: MyString
+  email: MyString
