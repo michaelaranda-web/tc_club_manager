@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181028170743) do
+ActiveRecord::Schema.define(version: 20181028172425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attended_events", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "attended_events", ["event_id"], name: "index_attended_events_on_event_id", using: :btree
+  add_index "attended_events", ["member_id"], name: "index_attended_events_on_member_id", using: :btree
 
   create_table "event_types", force: :cascade do |t|
     t.string   "name"
@@ -47,4 +57,6 @@ ActiveRecord::Schema.define(version: 20181028170743) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "attended_events", "events"
+  add_foreign_key "attended_events", "members"
 end
