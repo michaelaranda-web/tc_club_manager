@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+  namespace :rails_admin do
+    get 'add_event' => 'events#add_event'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
