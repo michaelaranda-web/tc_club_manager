@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "react_on_rails", "11.1.8"
 gem "webpacker", "~> 3"
+gem "foreman"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -51,3 +52,5 @@ end
 
 gem 'rails_12factor', group: :production
 
+
+gem 'mini_racer', platforms: :ruby
