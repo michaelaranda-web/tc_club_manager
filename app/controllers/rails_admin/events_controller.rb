@@ -6,5 +6,6 @@ class RailsAdmin::EventsController < RailsAdmin::MainController
   layout 'admin'
   
   def add_event
+    @event_types = EventType.all
   end
 end

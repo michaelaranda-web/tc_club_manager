@@ -7,6 +7,7 @@
     %meta{content: "NONE,NOARCHIVE", name: "robots"}
     = csrf_meta_tag
     = stylesheet_link_tag "rails_admin/rails_admin.css", media: :all
+    = stylesheet_link_tag "custom_rails_admin.css", media: :all
     = javascript_include_tag "rails_admin/rails_admin.js"
   %body.rails_admin
     #admin-js{:'data-i18n-options' => I18n.t("admin.js").to_json}
@@ -43,5 +44,5 @@
             %li.nav-header.dropdown-header Navigation
             %li= link_to 'Back to Dashboard', dashboard_path
         .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2
-          .row-fluid{style: 'margin-top:20px'}
+          .row-fluid{style: 'padding-top:10px'}
             = yield
