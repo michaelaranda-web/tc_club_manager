@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'hello_world', to: 'hello_world#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
-  namespace :rails_admin do
+  namespace :custom_admin do
     get 'add_event' => 'events#add_event'
   end
   # The priority is based upon order of creation: first created -> highest priority.
