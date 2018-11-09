@@ -1,5 +1,5 @@
 <div id="new-event-page">
-  <%= react_component("HelloWorld", props: @hello_world_props, prerender: false) %>
+  <%= react_component("NewEventPage", props: {authenticityToken: "test", members: @members, eventTypes: @event_types}, prerender: false) %>
   
   <div class="page-header">
     <h1>Submit New Event</h1>
@@ -11,7 +11,6 @@
       <div class="col-sm-10 controls">
         <select name="event[event_type_id]">
           <option disabled value="default">Select recurring event type</option>
-          <%= options_from_collection_for_select(@event_types, 'id', 'name') %>
         </select>
       </div>
     </div>
