@@ -77,7 +77,7 @@ export class MembersAutosuggest extends React.Component {
             name={`attendees[][drove]`}
             id="event_attendee_drove"
           />
-          <span>Drove</span>
+          <span className="drove-label">Drove</span>
           
           <input className="hidden" id="event_attendees" name={`attendees[][id]`} value={member.id} />
         </div>

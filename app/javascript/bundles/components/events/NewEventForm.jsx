@@ -21,7 +21,7 @@ export class NewEventForm extends React.Component {
   componentDidMount() {
     $("form").on("keypress", function (e) {
       if (e.keyCode == 13) {
-          return false;
+        return false;
       }
     });
   }
@@ -70,15 +70,29 @@ export class NewEventForm extends React.Component {
         <div className="field">
           <label htmlFor="event_date">Date</label>
           <br />
-          <select id="event_date_1i" name="event[date(1i)]">
-            {years}
-          </select>
-          <select id="event_date_2i" name="event[date(2i)]" defaultValue={currMonth}>
-            {months}
-          </select>
-          <select id="event_date_3i" name="event[date(3i)]" defaultValue={currDay}>
-            {days}
-          </select>
+          <div class="custom-select month-select">
+            <select 
+              id="event_date_2i"
+              name="event[date(2i)]" 
+              defaultValue={currMonth}>
+              {months}
+            </select>
+          </div>
+          <div class="custom-select day-select">
+            <select 
+              id="event_date_3i"
+              name="event[date(3i)]" 
+              defaultValue={currDay}>
+              {days}
+            </select>
+          </div>
+          <div class="custom-select year-select">
+            <select 
+              id="event_date_1i"
+              name="event[date(1i)]">
+              {years}
+            </select>
+          </div>
         </div>
         <div className="field">
           <label>Start Time</label>
@@ -86,22 +100,26 @@ export class NewEventForm extends React.Component {
           <input type="hidden" id="event_start_time_1i" name="event[start_time(1i)]" value={currYear} />
           <input type="hidden" id="event_start_time_2i" name="event[start_time(2i)]" value={currMonth} />
           <input type="hidden" id="event_start_time_3i" name="event[start_time(3i)]" value={currDay} />
-          <select 
-            id="event_start_time_4i" 
-            name="event[start_time(4i)]" 
-            value={this.state.startTimeHour}
-            onChange={this.onStartTimeHourChange.bind(this)}
-          >
-            {start_time_hours}
-          </select>
-          <select 
-            id="event_start_time_5i" 
-            name="event[start_time(5i)]" 
-            value={this.state.startTimeMinutes}
-            onChange={this.onStartTimeMinutesChange.bind(this)}
-          >
-            {start_time_minutes}
-          </select>
+          <div class="custom-select hour-select">  
+            <select 
+              id="event_start_time_4i"
+              name="event[start_time(4i)]" 
+              value={this.state.startTimeHour}
+              onChange={this.onStartTimeHourChange.bind(this)}
+            >
+              {start_time_hours}
+            </select>
+          </div>
+          <div class="custom-select minute-select">
+            <select 
+              id="event_start_time_5i"
+              name="event[start_time(5i)]" 
+              value={this.state.startTimeMinutes}
+              onChange={this.onStartTimeMinutesChange.bind(this)}
+            >
+              {start_time_minutes}
+            </select>
+          </div>
         </div>
         <div className="field">
           <label>End Time</label>
@@ -109,22 +127,26 @@ export class NewEventForm extends React.Component {
           <input type="hidden" id="event_end_time_1i" name="event[end_time(1i)]" value={currYear}/>
           <input type="hidden" id="event_end_time_2i" name="event[end_time(2i)]" value={currMonth} />
           <input type="hidden" id="event_end_time_3i" name="event[end_time(3i)]" value={currDay} />
-          <select 
-            id="event_end_time_4i" 
-            name="event[end_time(4i)]" 
-            value={this.state.endTimeHour}
-            onChange={this.onEndTimeHourChange.bind(this)}
-          >
-            {end_time_hours}
-          </select>
-          <select 
-            id="event_end_time_5i" 
-            name="event[end_time(5i)]"
-            value={this.state.endTimeMinutes}
-            onChange={this.onEndTimeMinutesChange.bind(this)}
-          >
-            {end_time_minutes}
-          </select>
+          <div class="custom-select hour-select">  
+            <select 
+              id="event_end_time_4i"
+              name="event[end_time(4i)]" 
+              value={this.state.endTimeHour}
+              onChange={this.onEndTimeHourChange.bind(this)}
+            >
+              {end_time_hours}
+            </select>
+          </div>
+          <div class="custom-select minute-select">
+            <select 
+              id="event_end_time_5i"
+              name="event[end_time(5i)]"
+              value={this.state.endTimeMinutes}
+              onChange={this.onEndTimeMinutesChange.bind(this)}
+            >
+              {end_time_minutes}
+            </select>
+          </div>
         </div>
       </div>
     );
@@ -132,18 +154,20 @@ export class NewEventForm extends React.Component {
   
   renderEventTypeSelector() {
     return (
-      <select name="event[event_type_id]" defaultValue="default" onChange={this.onEventTypeSelect.bind(this)}>
-        <option disabled value="default">Select recurring event type</option>
-          {
-            this.props.eventTypes.map((eventType, i) => {
-              return (
-                <option key={i} value={eventType.id}>
-                  {eventType.name}
-                </option>
-              )
-            })
-          }
-      </select>
+      <div class="custom-select">
+        <select name="event[event_type_id]" defaultValue="default" onChange={this.onEventTypeSelect.bind(this)}>
+          <option disabled value="default">Select recurring event type</option>
+            {
+              this.props.eventTypes.map((eventType, i) => {
+                return (
+                  <option key={i} value={eventType.id}>
+                    {eventType.name}
+                  </option>
+                )
+              })
+            }
+        </select>
+      </div>
     );
   }  
   
@@ -154,7 +178,6 @@ export class NewEventForm extends React.Component {
         <label>If submitting a recurring event, select from the following dropdown:</label>
         <br />
         {this.renderEventTypeSelector()}
-        <br />
         <br />
         <div className="field">
           <label htmlFor="event_name">Name</label>
@@ -185,8 +208,8 @@ export class NewEventForm extends React.Component {
         <label htmlFor="event_attendees">Attendees</label>
         <MembersAutosuggest members={this.props.members} />
         <div className="buttons-row">
-          <button onClick={() => { window.location.href='/admin/event' }} type="button">Back</button>
-          <input type="submit" name="commit" value="Create Event" />
+          <button class="btn btn-default" onClick={() => { window.location.href='/admin/event' }} type="button">Back</button>
+          <input class="btn btn-primary" type="submit" name="commit" value="Create Event" />
         </div>
       </form>
     );

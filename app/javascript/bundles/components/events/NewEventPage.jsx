@@ -5,7 +5,7 @@ import NewEventForm from './NewEventForm.jsx'
 export class NewEventPage extends React.Component {
   render() {
     return (
-      <div className="new-event-page">
+      <div id="new-event-page">
         <NewEventForm 
           authenticityToken={this.props.authenticityToken}
           members={this.props.members}
