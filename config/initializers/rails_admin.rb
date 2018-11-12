@@ -30,7 +30,9 @@ RailsAdmin.config do |config|
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
-    new
+    new do
+      except [Event]
+    end
     export
     bulk_delete
     show
@@ -44,8 +46,16 @@ RailsAdmin.config do |config|
   end
   
   config.model Event do
+    show do 
+      exclude_fields :attended_events
+    end
+    
     edit do
       exclude_fields :attended_events
     end
+  end
+  
+  config.model AttendedEvent do
+    visible false
   end
 end
