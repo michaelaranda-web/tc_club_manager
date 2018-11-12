@@ -58,4 +58,10 @@ RailsAdmin.config do |config|
   config.model AttendedEvent do
     visible false
   end
+  
+  config.model Member do
+    create do
+      exclude_fields :attended_events, :events_attended
+    end
+  end
 end
