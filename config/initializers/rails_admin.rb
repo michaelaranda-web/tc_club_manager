@@ -63,5 +63,13 @@ RailsAdmin.config do |config|
     create do
       exclude_fields :attended_events, :events_attended
     end
+    
+    show do
+      exclude_fields :attended_events
+    end
+    
+    edit do
+      exclude_fields :attended_events
+    end
   end
 end
