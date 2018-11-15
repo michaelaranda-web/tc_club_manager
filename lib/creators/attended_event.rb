@@ -10,7 +10,7 @@ class Creators::AttendedEvent
       attended_event.update_attributes!(member_drove: true)
     end
     
-    # member.add_volunteer_hours(event.volunteer_hours)
+    member.add_volunteer_hours(event.volunteer_hours)
     
     attended_event
   end
