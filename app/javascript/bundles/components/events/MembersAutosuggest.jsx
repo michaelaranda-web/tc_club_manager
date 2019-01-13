@@ -26,8 +26,11 @@ function getSuggestionValue(suggestion) {
 }
 
 function renderSuggestion(suggestion) {
+  var nickname = !!suggestion.nickname ? " (" + suggestion.nickname + ")" : "";
+  var suggestionText = suggestion.name + nickname;
+  
   return (
-    <span>{suggestion.name}</span>
+    <span>{suggestionText}</span>
   );
 }
 
