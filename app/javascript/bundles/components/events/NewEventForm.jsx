@@ -182,18 +182,18 @@ export class NewEventForm extends React.Component {
         <div className="field">
           <label htmlFor="event_name">Name</label>
           <br />
-          <input type="text" name="event[name]" id="event_name" value={this.state.name} />
+          <input type="text" name="event[name]" id="event_name" onChange={this.onEventNameChange.bind(this)} value={this.state.name} />
         </div>
         {this.renderDateTimeSelectors()}
         <div className="field">
           <label htmlFor="event_volunteer_hours">Volunteer Hours</label>
           <br />
-          <input type="text" name="event[volunteer_hours]" id="event_volunteer_hours" value={this.state.volunteerHours} />
+          <input type="text" name="event[volunteer_hours]" id="event_volunteer_hours" onChange={this.onEventVolunteerHoursChange.bind(this)} value={this.state.volunteerHours} />
         </div>
         <div className="field">
           <label htmlFor="event_driving_distance">Driving Distance</label>
           <br />
-          <input type="text" name="event[driving_distance]" id="event_driving_distance" value={this.state.drivingDistance} />
+          <input type="text" name="event[driving_distance]" id="event_driving_distance" onChange={this.onEventDrivingDistanceChange.bind(this)} value={this.state.drivingDistance} />
         </div>
         <div className="field">
           <label htmlFor="event_event_summary">Event Summary</label>
@@ -227,6 +227,30 @@ export class NewEventForm extends React.Component {
       endTimeMinutes: selectedEventType.end_time_minutes,
       volunteerHours: selectedEventType.volunteer_hours,
       drivingDistance: selectedEventType.driving_distance
+    })
+  }
+  
+  onEventNameChange(e) {
+    this.setState({
+      name: e.target.value  
+    })
+  }
+  
+  onEventVolunteerHoursChange(e) {
+    this.setState({
+      volunteerHours: e.target.value  
+    })
+  }
+
+  onEventDrivingDistanceChange(e) {
+    this.setState({
+      drivingDistance: e.target.value  
+    })
+  }
+  
+  onEventChange(e) {
+    this.setState({
+      name: e.target.value  
     })
   }
   
