@@ -16,7 +16,7 @@ function getSuggestions(value, members, selectedMembers) {
   }
 
   const regex = new RegExp('^' + escapedValue, 'i');
-  let suggestions = members.filter(member => regex.test(member.name));
+  let suggestions = members.filter(member => regex.test(member.name) || regex.test(member.nickname));
   let remainingSuggestions = suggestions.filter(member => findWithAttr(selectedMembers, "name", member.name) === -1 );
   return remainingSuggestions;
 }
