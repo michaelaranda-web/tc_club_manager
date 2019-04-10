@@ -41,4 +41,6 @@ config.webpacker.check_yarn_integrity = true
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  config.action_mailer.perform_deliveries = false
 end

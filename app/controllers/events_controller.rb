@@ -17,6 +17,8 @@ class EventsController < ApplicationController
     
     respond_to do |format|
       if @event.save
+        ReimbursementMailer.reimbursement_email.deliver_later
+        
         format.html { redirect_to '/admin/event', notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
