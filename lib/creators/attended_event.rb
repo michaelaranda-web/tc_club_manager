@@ -1,4 +1,4 @@
-class Creators::AttendedEvent 
+class Creators::AttendedEvent
   def create(member, event, conditions)
     attended_event = ::AttendedEvent.create!(member_id: member.id, event_id: event.id)
     

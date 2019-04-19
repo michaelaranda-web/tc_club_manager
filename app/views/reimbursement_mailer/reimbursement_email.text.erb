@@ -1,4 +1,9 @@
 Hello <%= @member.name %>
 ===============================================
  
-We owe you some moolah because you drove for <%= @event.name %>
+Thank you for volunteering as a driver for <%= @event.name %><% if @event.date %> on <%= @event.date.to_formatted_s(:long) %><% end %>!
+
+Based on the event's driving distance, we would like to offer a reimbursement of <%= number_to_currency(@reimbursement_amount) %> for gas. 
+Please let one of our officers know via Facebook or email if you would like to claim the reimbursement. 
+
+Gan-en!

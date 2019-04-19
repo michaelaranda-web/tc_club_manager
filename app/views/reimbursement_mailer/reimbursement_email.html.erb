@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style type="text/css" media="screen">
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    
+      #email-content { 
+        height: 100%;
+        background: white;
+        text-align: center; 
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 15px;
+      }
+    </style>
+    
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hello <%= @member.name %></h1>
-    <p>
-      We owe you some moolah because you drove for <%= @event.name %>.
-    </p>
+    <div id="email-content">
+      <div id="email-header">
+        <h1>UCSD Tzu Ching</h1>  
+      </div>
+      
+      <div id="email-body">
+        <p>Dear <%= @member.name %>,</p>
+        <p>
+          Thank you for volunteering as a driver for <b><%= @event.name %></b>
+          <% if @event.date %>
+            on <b><%= @event.date.to_formatted_s(:long) %></b>
+          <% end %>
+          !
+        </p>
+        <p>
+          If you are interested in a reimbursement of <b><%= number_to_currency(@reimbursement_amount) %></b> for gas, please let us know
+          by clicking the link below. Once notified, we will do our best to get your reimbursement to you as soon as possible.
+        </p>
+        <div>
+          <%= link_to "Request reimbursement", reimbursement_request_url(
+              reimbursement: {
+                event_id: @event.id, 
+                member_id: @member.id, 
+                claimed: false, 
+                amount: @reimbursement_amount
+              }
+            ), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
