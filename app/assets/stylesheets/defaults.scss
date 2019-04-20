@@ -1,0 +1,70 @@
+// Media Query Helpers
+$mobile-min: 320px;
+$mobile-max: 767px;
+$tablet-portrait-min: 768px;
+$tablet-portrait-max: 991px;
+$tablet-landscape-min: 992px;
+$tablet-landscape-max: 1199px;
+$desktop-min: 1200px;
+$desktop-max: 1600px;
+
+/*Responsive query mixins */
+@mixin media-above($min) {
+  @media (min-width: $min) { @content; }
+}
+@mixin media-below($max) {
+  @media (max-width: $max) { @content; }
+}
+@mixin media-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) { @content; }
+}
+
+body {
+  background-color: #f0f0f0;
+  margin: 0;
+  height: 100vh;
+}
+
+#site-header {
+  text-align: center;
+  font-family: Oswald, sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  background: image-url("tc-sun-god-header.png") bottom right no-repeat;
+  background-size: contain;
+  padding: 10px 0 15px;
+  
+  #site-title {
+    margin: 0;
+    font-size: 36px;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    
+    @include media-below($mobile-max) {
+      font-size: 26px;
+    }
+  }
+  
+  #site-subtitle {
+    margin: 0;
+    font-size: 13px;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    
+    @include media-below($mobile-max) {
+      font-size: 12px;
+    }
+  }
+}
+
+#site-navigation {
+  background-color: #74ccd1;
+  height: 20px;
+}
+
+.page {
+  background-color: white;
+  max-width: 1100px;
+  margin: 0 3%;
+  height: inherit;
+}

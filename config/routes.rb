@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :events
   
   get 'reimbursement_request' => 'reimbursements#reimbursement_request'
+  get 'reimbursement_already_exists' => 'reimbursements#reimbursement_already_exists'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
