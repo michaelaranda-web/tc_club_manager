@@ -1,4 +1,4 @@
-module CustomAdmin  
+module Admin  
   class EventsController < ApplicationController
     layout 'admin'
     
