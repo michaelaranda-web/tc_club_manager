@@ -24,7 +24,7 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
   
   config.navigation_static_links = {
-    'Submit an Event' => '/admin/add_event'
+    'Submit an Event' => '/admin/manage/add_event'
   }
 
   config.actions do
