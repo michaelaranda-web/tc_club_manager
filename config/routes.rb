@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   namespace :admin do
+    root 'home#index'
+    
     namespace :manage do
       get 'add_event' => 'events#add_event'
     end
+    
+    get 'resources' => 'resources#index'
   end
   
   mount RailsAdmin::Engine => '/admin/manage', as: 'rails_admin'

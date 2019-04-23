@@ -1,0 +1,53 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#site-home-page {
+  #navigation {
+    .navigation-panels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      justify-items: center;
+      
+      .navigation-panel-container {
+        height: 200px;
+        width: 25%;
+        min-width: 250px;
+        margin: 20px;
+        border: 1px solid #e1e4e8;
+        border-radius: 3px;
+        border-color: #d1d5da;
+        cursor: pointer;
+        
+        a {
+          text-decoration: none;
+          color: #1d1b1b;
+        }
+        
+        .navigation-panel-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          color: #353333;
+          font-family: Lato;
+          
+          &:hover {
+            background-color: #efefef;
+          }
+          
+          .panel-icon {
+            font-size: 40px;
+          }
+          
+          .panel-label {
+            margin-top: 15px;
+            font-size: 22px;
+          }
+        }
+      }
+    }      
+  }
+}
