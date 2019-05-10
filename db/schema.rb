@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181110003838) do
+ActiveRecord::Schema.define(version: 20190510185928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,14 @@ ActiveRecord::Schema.define(version: 20181110003838) do
 
   add_index "reimbursements", ["event_id"], name: "index_reimbursements_on_event_id", using: :btree
   add_index "reimbursements", ["member_id"], name: "index_reimbursements_on_member_id", using: :btree
+
+  create_table "resources", force: :cascade do |t|
+    t.string "name"
+    t.text   "description"
+    t.string "account"
+    t.string "password"
+    t.text   "link"
+  end
 
   add_foreign_key "attended_events", "events"
   add_foreign_key "attended_events", "members"
