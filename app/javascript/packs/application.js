@@ -1,9 +1,9 @@
 import ReactOnRails from 'react-on-rails';
 
 import NewEventPage from '../bundles/components/events/NewEventPage';
-import OfficerResourcesPage from '../bundles/components/resources_page/OfficerResourcesPage';
+import ClubResourcesPage from '../bundles/components/resources_page/ClubResourcesPage';
 
 ReactOnRails.register({
   NewEventPage,
-  OfficerResourcesPage
+  ClubResourcesPage
 });

@@ -1,10 +1,10 @@
 import React from 'react'
 
-export class OfficerResourcesPage extends React.Component {
+export class ClubResourcesPage extends React.Component {
   render() {
     return (
-      <div id="officer-resources-page">
-        <h1>Officer Resources</h1>
+      <div id="club-resources-page">
+        <h1>Club Resources</h1>
         <div id="resources-section">
           <table>
             <tbody>
@@ -41,4 +41,4 @@ export class OfficerResourcesPage extends React.Component {
   }
 }
 
-export default OfficerResourcesPage;
+export default ClubResourcesPage;
