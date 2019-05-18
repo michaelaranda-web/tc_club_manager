@@ -19,10 +19,14 @@ $desktop-max: 1600px;
   @media (min-width: $min) and (max-width: $max) { @content; }
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   background-color: #f0f0f0;
   margin: 0;
-  height: 100vh;
+  height: inherit;
   font-family: Lato;
 }
 

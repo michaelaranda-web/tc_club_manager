@@ -1,8 +1,21 @@
 #club-resources-page {
+  #category-selector-row {
+    text-align: right;
+  }
+  
   #resources-section {
+    .resources-table-header {
+      font-size: 20px;
+      color: #dc9201;
+      padding: 10px;
+      margin: 5px 0;
+    }
+    
     table {
       width: 100%;
       text-align: left;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      padding: 10px;
       
       tbody {
         td, th {
