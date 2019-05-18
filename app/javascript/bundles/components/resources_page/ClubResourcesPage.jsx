@@ -91,7 +91,9 @@ export class ClubResourcesPage extends React.Component {
       
       return this.renderOfficerResources(resources)
     } else {
-      let resources = this.props.resources
+      let resources = this.props.resources.filter(resource => {
+        return resource.category === "social_media"
+      })
       
       return this.renderSocialMediaResources(resources)
     }
