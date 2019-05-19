@@ -20,13 +20,13 @@ $desktop-max: 1600px;
 }
 
 html {
-  min-height: 100vh;
+  height: 100%;
 }
 
 body {
   background-color: #f0f0f0;
   margin: 0;
-  height: 100vh;
+  height: inherit;
 }
 
 #site-header {
