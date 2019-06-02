@@ -1,0 +1,8 @@
+en:
+  admin:
+    actions:
+      manage_event:
+        title: "Manage Event"
+        menu: "Manage Event"
+        breadcrumb: "Manage Event"
+        link: "Manage Event"
