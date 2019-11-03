@@ -10,6 +10,12 @@ module RailsAdmin
         register_instance_option :member do
           true
         end
+        
+        register_instance_option :controller do
+          proc do
+            redirect_to "/admin/manage_event/#{@object.id}"
+          end
+        end
 
         register_instance_option :link_icon do
           'icon-calendar'

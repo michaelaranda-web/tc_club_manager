@@ -78,7 +78,7 @@ module RailsAdmin
         nodes = nodes.select { |n| n.parent.nil? || !n.parent.to_s.in?(node_model_names) }
         li_stack = navigation nodes_stack, nodes
 
-        label = 'Basic Management'
+        label = 'Navigation'
 
         %(<li class='dropdown-header'>#{capitalize_first_letter label}</li>#{li_stack}) if li_stack.present?
       end.join.html_safe

@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'home#index'
     
-    namespace :manage do
-      get 'add_event' => 'events#add_event'
-    end
+    get 'add_event' => 'events#add_event'
+    get 'manage_event/:id' => 'events#manage_event'
     
     get 'resources' => 'resources#index'
   end
