@@ -2,6 +2,6 @@
   <%= render "shared/site_header" %>
   
   <div class="page-content">
-    Resources
+    <%= react_component("ClubResourcesPage", props: {authenticityToken: form_authenticity_token, resources: @resources}, prerender: false) %>
   </div>
 </div>
