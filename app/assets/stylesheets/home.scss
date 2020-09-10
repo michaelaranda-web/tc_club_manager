@@ -4,12 +4,9 @@
 
 #site-home-page {
   .page-content {
-    h1 {
-      font-size: 1.3rem;
-      margin: 3px 0 15px;
-    }
-    
     #navigation {
+      margin-bottom: 20px;
+      
       .navigation-panels {
         display: flex;
         overflow: auto;
@@ -58,12 +55,79 @@
             .panel-label {
               margin-top: 15px;
               text-align: center;
-              font-size: 10px;
+              font-size: 12px;
               font-weight: bold;
             }
           }
         }
       }      
+    }
+    
+    h2 {
+      font-size: 0.8rem;
+    }
+    
+    #upcoming-events-container {
+      #upcoming-events-list-container {
+        ul#upcoming-events-list {
+          list-style: none;
+          padding-inline-start: 0px;
+          
+          .upcoming-events-list-item {
+            height: 75px;
+            margin: 5px auto;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            
+            .date-section {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 0 15px;
+              height: 100%;
+              background-color: #ecfcff;
+              
+              .month {
+                font-weight: bold;
+                font-size: 0.7rem;
+              }
+              
+              .number {
+                font-weight: bold;
+                font-size: 1.4rem;
+                margin-bottom: 3px;
+              }
+              
+              .day-of-week {
+                font-size: 0.7rem;
+                font-weight: bold;
+                color: #208caa;
+              }
+            }
+            
+            .details {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+              justify-content: center;
+              padding: 2px 5px 2px 20px;
+              
+              .event-name {
+                font-weight: bold;
+                margin-bottom: 5px;
+              }
+              
+              .event-time {
+                color: #8a8a8a;
+              }
+            }
+          }
+        }
+      }
     }
   } 
 }
