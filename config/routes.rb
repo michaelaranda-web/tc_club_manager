@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
     
     get 'resources' => 'resources#index'
+    get 'events' => 'events#index'
   end
   
   mount RailsAdmin::Engine => '/admin/manage', as: 'rails_admin'
