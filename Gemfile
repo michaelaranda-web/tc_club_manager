@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', github: 'rails/rails', branch: '4-2-stable'
 gem 'pg', '~> 0.18.4'
-gem 'rails_admin', '~> 1.3'
+gem 'rails_admin', '~> 1.4'
 gem 'rails_admin_material'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
